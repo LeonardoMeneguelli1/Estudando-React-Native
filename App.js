@@ -1,8 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react'
-import {SafeAreaView,View,Text } from 'react-native';
+import {SafeAreaView,View,Text,StatusBar } from 'react-native';
+
 import Carrinho from './src/telas/carrinho';
-import { useFonts,Montserrat_400Regular,Montserrat_700Bold,Montserrat_400Regular_Italic } from '@expo-google-fonts/montserrat';
+import { 
+  useFonts, 
+  Montserrat_400Regular, 
+  Montserrat_700Bold,
+} from '@expo-google-fonts/montserrat';
+import mocks from './src/mocks/carrinho'
 
 export default function App() {
   const[fonteCarregada] = useFonts ({
@@ -15,7 +20,7 @@ export default function App() {
   return (
     <SafeAreaView >
      <StatusBar/>
-     <Carrinho/>
+     <Carrinho {...mocks} topo={mocks.topo} detalhes={mocks.detalhes}/>
     </SafeAreaView>
   );
 }

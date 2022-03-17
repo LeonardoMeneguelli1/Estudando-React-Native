@@ -2,18 +2,18 @@ import React from 'react';
 import{View,StyleSheet,Image,Text} from 'react-native';
 
 import Texto from '../../../componentes/texto';
-import logo from '../../../../assets/logo.png';
 
-export default function Detalhes(){
+
+export default function Detalhes({nome,logoEmpresa,nomeEmpresa,descricao,preco}){
     return<>
-     <Text style={estilos.nome}>Carrinho de Skins</Text>
+        <Text style={estilos.nome}>{nome}</Text>
         <View style={estilos.empresa}>
-            <Image style={estilos.imagemEmpresa} source={logo} />
-            <Text style={estilos.nomeEmpresa}>RIOT</Text>
+            <Image style={estilos.imagemEmpresa} source={logoEmpresa} />
+            <Text style={estilos.nomeEmpresa}>{nomeEmpresa}</Text>
         </View>
-            <Texto style={estilos.descrição}>Uma empresa que visa sempre a diversão e qulidade para os joadores.</Texto>
-            <Text style={estilos.preco}>R$ 50,00</Text>
-            </>
+        <Texto style={estilos.descricao}>{descricao}.</Texto>
+        <Text style={estilos.preco}>{preco}</Text>
+    </>
 }
 
 const estilos = StyleSheet.create({
@@ -38,17 +38,12 @@ const estilos = StyleSheet.create({
         lineHeight: 26,
         marginLeft: 12,
         fontWeight:"bold",
-        
-        
-
     },
     descrição:{
         color:"#A3A3A3",
         fontSize: 16,
         lineHeight: 26,
         fontFamily:"MontserratRegular",
-        
-
     },
     preco:{
         color:"#2A9F85",

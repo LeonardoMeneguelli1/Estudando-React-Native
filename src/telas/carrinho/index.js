@@ -5,13 +5,13 @@ import { View } from 'react-native';
 import Topo from './componentes/topo';
 import Detalhes from './componentes/detalhes';
 
-export default function Carrinho() { 
+export default function Carrinho({topo,detalhes}) { 
    return <>
          
-        <Topo/>
+        <Topo {...topo}/>
         
         <View style={estilos.carrinho}>
-           <Detalhes/>
+           <Detalhes {...detalhes} />
         </View>
    </>
 }
@@ -21,7 +21,5 @@ const estilos = StyleSheet.create({
     carrinho:{
         paddingVertical: 8,
         paddingHorizontal: 16
-
     },
-   
 });
